@@ -9,52 +9,50 @@
         :root { --terracota: #B7410E; --crema: #FFFBF5; --oscuro: #2D3748; --verde-wa: #25D366; }
         body { font-family: 'Lato', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); scroll-behavior: smooth; line-height: 1.6; }
         
-        /* Navegación Organizada */
+        /* Navegación */
         nav { 
-            background: white; 
-            padding: 0.8rem 5%; 
-            position: fixed; 
-            width: 100%; 
-            top: 0; 
-            z-index: 2000; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-sizing: border-box;
+            background: white; padding: 0.8rem 5%; position: fixed; width: 100%; top: 0; z-index: 2000; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-between; align-items: center; box-sizing: border-box;
         }
-        .nav-left { display: flex; align-items: center; gap: 20px; }
+        .nav-left { display: flex; align-items: center; gap: 15px; }
         .nav-left img { height: 45px; width: auto; }
-        
-        .contact-top { display: flex; align-items: center; gap: 15px; font-size: 0.85rem; }
-        .contact-top a { text-decoration: none; color: var(--oscuro); font-weight: bold; display: flex; align-items: center; gap: 5px; transition: 0.3s; }
-        .contact-top a:hover { color: var(--terracota); }
-        .wa-pill { background: var(--verde-wa); color: white !important; padding: 5px 12px; border-radius: 20px; }
+        .contact-top { display: flex; flex-direction: column; font-size: 0.8rem; font-weight: bold; }
+        .contact-top a { text-decoration: none; color: var(--oscuro); display: flex; align-items: center; gap: 5px; }
+        .wa-text { color: var(--verde-wa) !important; }
 
-        .official-badge { font-weight: bold; color: var(--terracota); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; border: 1px solid var(--terracota); padding: 4px 10px; border-radius: 4px; }
+        .official-badge { font-weight: bold; color: var(--terracota); font-size: 0.75rem; text-transform: uppercase; border: 1px solid var(--terracota); padding: 4px 8px; border-radius: 4px; }
 
+        /* Hero */
         .hero { padding: 160px 20px 60px; text-align: center; background: white; border-bottom: 5px solid var(--terracota); }
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--terracota); margin: 10px 0; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--terracota); margin: 10px 0; }
         
-        .hero-gallery { display: flex; gap: 20px; justify-content: center; max-width: 1200px; margin: 40px auto; flex-wrap: wrap; }
-        .hero-gallery img { width: 30%; min-width: 280px; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* Galería Principal - Fotos iguales */
+        .hero-gallery { display: flex; gap: 15px; justify-content: center; max-width: 1100px; margin: 40px auto; flex-wrap: wrap; }
+        .hero-gallery img { width: 31%; min-width: 280px; height: 350px; object-fit: cover; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 
-        .umbira-destinos { background: #fdf2ed; padding: 40px 20px; text-align: center; margin-top: -5px; border-bottom: 1px solid #eee; }
-        .umbira-destinos p { max-width: 800px; margin: auto; font-size: 1.2rem; font-style: italic; color: var(--terracota); }
+        .destinos-frase { background: #fdf2ed; padding: 30px 20px; text-align: center; font-style: italic; color: var(--terracota); font-size: 1.1rem; }
 
-        .main-content { padding: 60px 20px; max-width: 1100px; margin: auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 20px; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--terracota); text-align: center; }
-        .card img { width: 100%; height: auto; max-height: 400px; object-fit: contain; border-radius: 10px; margin-bottom: 15px; }
+        /* Secciones de Idiomas */
+        .main-content { padding: 60px 5%; max-width: 1200px; margin: auto; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--terracota); font-size: 2rem; border-bottom: 2px solid #ddd; padding-bottom: 10px; margin-top: 50px; text-align: center; }
         
-        .btn-contact { background: var(--terracota); color: white; padding: 18px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 30px; transition: 0.3s; }
-
-        footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 20px; margin-top: 60px; }
+        /* Grid de Fotos iguales */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 30px; }
+        .card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--terracota); text-align: center; }
         
-        @media (max-width: 850px) { 
-            nav { flex-direction: column; gap: 10px; padding: 1rem; }
+        /* IMPORTANTE: Todas las fotos de las tarjetas con el mismo tamaño */
+        .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; }
+        
+        .btn-contact { background: var(--verde-wa); color: white; padding: 15px 30px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 20px; transition: 0.3s; }
+        .btn-contact:hover { transform: scale(1.05); }
+
+        footer { background: var(--oscuro); color: white; text-align: center; padding: 50px 20px; margin-top: 60px; }
+        .piva { font-size: 0.8rem; opacity: 0.6; margin-top: 15px; }
+
+        @media (max-width: 800px) {
+            nav { flex-direction: column; gap: 10px; }
             .hero { padding-top: 220px; }
-            .hero-gallery img { width: 90%; }
+            .hero-gallery img { width: 100%; height: 250px; }
         }
     </style>
 </head>
@@ -62,21 +60,18 @@
 
 <nav>
     <div class="nav-left">
-        <img src="logo Toursumbria.png" alt="Logo ToursUmbria">
+        <img src="logo Toursumbria.png" alt="Logo">
         <div class="contact-top">
-            <a href="https://wa.me/393883881471" class="wa-pill"><span>📞</span> WhatsApp</a>
-            <a href="mailto:info.toursumbria@gmail.com"><span>✉️</span> info.toursumbria@gmail.com</a>
+            <a href="https://wa.me/393883881471" class="wa-text">📞 +39 388 388 1471</a>
+            <a href="mailto:info.toursumbria@gmail.com">✉️ info.toursumbria@gmail.com</a>
         </div>
     </div>
-    <div class="official-badge">Guía Oficial de Turismo</div>
+    <div class="official-badge">Guía Oficial</div>
 </nav>
 
 <header class="hero">
-    <h1>Explora el Alma de Umbría</h1>
-    <p style="max-width: 750px; margin: auto; font-size: 1.2rem; color: #555;">
-        Descubre la riqueza histórica de Italia de la mano de una historiadora del arte. 
-        Rutas personalizadas que transforman una visita en una experiencia inolvidable.
-    </p>
+    <h1>ToursUmbria</h1>
+    <p style="font-size: 1.3rem; color: #555;">Historiadora del Arte & Guía Oficial de Turismo</p>
     
     <div class="hero-gallery">
         <img src="basilica_principal.jpg" alt="Asís">
@@ -85,40 +80,89 @@
     </div>
 </header>
 
-<section class="umbira-destinos">
-    <p>
-        "Además de Perugia y Asís, es posible organizar visitas exclusivas a <strong>Spello, Spoleto, Foligno</strong> y los burgos más fascinantes de toda la región de Umbría."
-    </p>
-</section>
+<div class="destinos-frase">
+    "Spello, Spoleto, Foligno, Perugia, Assisi..."
+</div>
 
 <main class="main-content">
-    <div class="grid">
-        <div class="card">
-            <img src="anuncia.jpg" alt="Arte">
-            <h3>Arte y Simbolismo</h3>
-            <p>Un viaje a través de la iconografía y los maestros del Renacimiento.</p>
+    
+    <section id="es">
+        <h2>🇪🇸 Rutas en Español</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="anuncia.jpg" alt="Arte">
+                <h3>Arte y Simbolismo</h3>
+                <p>Análisis profundo de la iconografía y los maestros del Renacimiento.</p>
+            </div>
+            <div class="card">
+                <img src="campana_francisco.jpg" alt="Asís">
+                <h3>Asís y Patrimonio</h3>
+                <p>Descubre la historia de San Francisco y los tesoros de la ciudad rosa.</p>
+            </div>
+            <div class="card">
+                <img src="callita.jpg" alt="Pueblos">
+                <h3>Burgos Medievales</h3>
+                <p>Visitas a Spello, Spoleto y los rincones más bellos de Umbría.</p>
+            </div>
         </div>
-        <div class="card">
-            <img src="campana_francisco.jpg" alt="Asís">
-            <h3>Patrimonio de Asís</h3>
-            <p>Espiritualidad y arte en los lugares declarados Patrimonio de la Humanidad.</p>
+    </section>
+
+    <section id="fr">
+        <h2>🇫🇷 Visites en Français</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="meditacion.jpg" alt="Méditation">
+                <h3>Art et Spiritualité</h3>
+                <p>Une immersion dans l'histoire de l'art au cœur de l'Ombrie.</p>
+            </div>
+            <div class="card">
+                <img src="fuente2.jpg" alt="Perugia">
+                <h3>Pérouse Médiévale</h3>
+                <p>Découvrez les secrets étrusques et la splendeur de la capitale.</p>
+            </div>
+            <div class="card">
+                <img src="calle.jpg" alt="Rues">
+                <h3>Villes d'Art</h3>
+                <p>Spello, Spoleto et Foligno : la beauté authentique de l'Italie.</p>
+            </div>
         </div>
-        <div class="card">
-            <img src="callita.jpg" alt="Pueblos">
-            <h3>Arquitectura Viva</h3>
-            <p>Paseos por los rincones medievales mejor conservados de Italia.</p>
+    </section>
+
+    <section id="it">
+        <h2>🇮🇹 Tour in Italiano</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="basilica_principal.jpg" alt="Basilica">
+                <h3>Assisi Patrimonio UNESCO</h3>
+                <p>Un viaggio critico e storico tra i capolavori di Giotto e Cimabue.</p>
+            </div>
+            <div class="card">
+                <img src="fuente.jpg" alt="Fontana">
+                <h3>Perugia Insolita</h3>
+                <p>Percorsi esclusivi attraverso i monumenti iconici del centro storico.</p>
+            </div>
+            <div class="card">
+                <img src="anuncia.jpg" alt="Mosaico">
+                <h3>Umbria Nascosta</h3>
+                <p>Visite guidate a Spello, Foligno e i borghi più suggestivi.</p>
+            </div>
         </div>
-    </div>
-    <center>
-        <a href="https://wa.me/393883881471" class="btn-contact">Solicitar presupuesto personalizado</a>
+    </section>
+
+    <center style="margin-top: 50px;">
+        <p><strong>Contacto / Contatti / Contact:</strong></p>
+        <a href="https://wa.me/393883881471" class="btn-contact">WhatsApp: +39 388 388 1471</a>
+        <br><br>
+        <a href="mailto:info.toursumbria@gmail.com" style="color: var(--terracota); font-weight: bold;">info.toursumbria@gmail.com</a>
     </center>
+
 </main>
 
 <footer>
     <p><strong>ToursUmbria | Historiadora del Arte</strong></p>
-    <p>Guía Turística Habilitada - info.toursumbria@gmail.com</p>
-    <div style="font-size: 0.85rem; opacity: 0.6; margin-top: 15px;">PARTITA IVA: 07532960486</div>
-    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 30px;">© 2026 ToursUmbria. Todos los derechos reservados.</p>
+    <p>Guía Oficial - +39 388 388 1471 - info.toursumbria@gmail.com</p>
+    <div class="piva">P.IVA: 07532960486</div>
+    <p style="font-size: 0.7rem; opacity: 0.5; margin-top: 20px;">© 2026 Todos los derechos reservados.</p>
 </footer>
 
 </body>
