@@ -3,138 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToursUmbria | Historiadora del Arte & Guía Oficial</title>
-    <meta name="description" content="Visitas guiadas en español, francés e italiano por Perugia, Asís, Spello, Spoleto y Foligno.">
+    <title>ToursUmbria | Historiadora del Arte & Guía Oficial en Umbría</title>
+    <meta name="description" content="Visitas guiadas en español, francés e italiano por Perugia, Asís, Spello, Spoleto y Foligno con historiadora del arte. Tours de autor con guía oficial.">
+    <meta name="keywords" content="Guía turística Umbría, Perugia tour, Asís guía, Historiadora del arte Italia, Visite guidée Ombrie, Guida turistica Umbria, Spello, Spoleto, Foligno">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root { --terracota: #B7410E; --crema: #FFFBF5; --oscuro: #2D3748; --verde-wa: #25D366; }
         body { font-family: 'Lato', sans-serif; margin: 0; background-color: var(--crema); color: var(--oscuro); scroll-behavior: smooth; line-height: 1.6; }
+        nav { background: white; padding: 1rem; position: fixed; width: 100%; top: 0; z-index: 2000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); display: flex; justify-content: space-around; align-items: center; }
+        nav .brand { display: flex; align-items: center; gap: 12px; font-family: 'Playfair Display', serif; color: var(--terracota); font-weight: bold; font-size: 1.1rem; }
+        nav .brand img { height: 35px; width: auto; }
+        nav .lang-links a { text-decoration: none; color: var(--terracota); font-weight: bold; margin: 0 15px; font-size: 0.85rem; text-transform: uppercase; }
+        .hero { padding: 160px 20px 60px; text-align: center; background: white; border-bottom: 5px solid var(--terracota); }
+        .logo-img { max-width: 180px; height: auto; margin-bottom: 25px; }
+        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--terracota); margin: 10px 0; }
+        .badge { background: var(--terracota); color: white; padding: 6px 18px; display: inline-block; border-radius: 20px; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
+        .intro-text { max-width: 800px; margin: 20px auto 40px; font-style: italic; color: #555; font-size: 1.2rem; }
+        .hero-gallery { display: flex; gap: 15px; justify-content: center; max-width: 1100px; margin: auto; overflow: hidden; flex-wrap: wrap; }
+        .hero-gallery img { width: 30%; min-width: 280px; height: 300px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         
-        /* Logo Central al inicio */
-        .header-main { padding: 60px 20px; text-align: center; background: white; border-bottom: 5px solid var(--terracota); }
-        .logo-central { max-width: 250px; height: auto; margin-bottom: 20px; }
-        
-        .contact-info { display: flex; flex-direction: column; align-items: center; gap: 10px; font-weight: bold; margin-bottom: 20px; }
-        .contact-info a { text-decoration: none; color: var(--oscuro); transition: 0.3s; }
-        .wa-link { color: var(--verde-wa) !important; font-size: 1.2rem; }
-        .official-tag { color: var(--terracota); text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; border: 1px solid var(--terracota); padding: 5px 15px; border-radius: 4px; display: inline-block; margin-top: 10px; }
+        /* Sección especial para la Basílica - Sin deformación */
+        .basilica-section { padding: 60px 20px; text-align: center; background: white; border-bottom: 2px solid #eee; }
+        .basilica-container { max-width: 900px; margin: auto; display: flex; justify-content: center; align-items: center; }
+        .basilica-container img { max-width: 100%; height: auto; object-fit: contain; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .basilica-text { max-width: 700px; margin: 20px auto; font-family: 'Playfair Display', serif; color: var(--terracota); font-size: 1.5rem; }
 
-        h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--terracota); margin: 20px 0; }
-        .intro-text { max-width: 800px; margin: 0 auto 40px; font-style: italic; color: #555; font-size: 1.2rem; }
-
-        /* Galería de Fotos - Tamaño Uniforme */
-        .hero-gallery { display: flex; gap: 15px; justify-content: center; max-width: 1100px; margin: auto; flex-wrap: wrap; }
-        .hero-gallery img { width: 30%; min-width: 280px; height: 350px; object-fit: cover; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .lang-section { padding: 100px 20px; max-width: 1100px; margin: auto; }
+        h2 { font-family: 'Playfair Display', serif; color: var(--terracota); font-size: 2.2rem; border-bottom: 2px solid #ddd; padding-bottom: 20px; margin-bottom: 60px; text-align: center; }
         
-        /* Sección Especial Basílica (Sin deformar) */
-        .basilica-section { padding: 60px 20px; text-align: center; background: #fffcf9; }
-        .basilica-container img { max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        /* Título específico "VISITA GUIADA" por idioma */
+        .visit-guide-title { font-family: 'Playfair Display', serif; color: var(--oscuro); font-size: 1.3rem; font-weight: bold; text-align: left; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 30px; margin-top: 60px; }
 
-        /* Contenido de Visitas */
-        .main-content { padding: 60px 5%; max-width: 1200px; margin: auto; }
-        .visit-label { font-family: 'Playfair Display', serif; color: var(--terracota); font-size: 1.8rem; text-align: center; margin-top: 80px; margin-bottom: 40px; border-bottom: 2px solid #ddd; padding-bottom: 15px; text-transform: uppercase; }
-        
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 25px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--terracota); text-align: center; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 40px; }
+        .card { background: white; padding: 35px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--terracota); text-align: center; }
         .card img { width: 100%; height: 250px; object-fit: cover; border-radius: 10px; margin-bottom: 15px; }
-        
-        footer { background: var(--oscuro); color: white; text-align: center; padding: 60px 20px; margin-top: 80px; }
-        .piva { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
+        h3 { margin-top: 0; color: var(--terracota); font-size: 1.5rem; }
+        .btn-contact { background: var(--verde-wa); color: white; padding: 20px 45px; text-decoration: none; border-radius: 50px; font-weight: bold; display: inline-block; margin-top: 40px; transition: 0.3s; font-size: 1.1rem; }
+        .contact-top { display: flex; flex-direction: column; font-size: 0.8rem; font-weight: bold; text-align: left; margin-left: auto; padding-right: 20px; }
+        .contact-top a { text-decoration: none; color: var(--oscuro); display: flex; align-items: center; gap: 5px; }
+        .wa-text { color: var(--verde-wa) !important; }
 
-        @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            .hero-gallery img { width: 100%; }
-        }
+        footer { background: var(--oscuro); color: white; text-align: center; padding: 80px 20px; margin-top: 60px; }
+        .piva { font-size: 0.85rem; opacity: 0.6; margin-top: 20px; }
+        @media (max-width: 900px) { h1 { font-size: 2.2rem; } .hero-gallery img { width: 48%; } }
+        @media (max-width: 600px) { .hero-gallery img { width: 100%; } nav { flex-direction: column; gap: 10px; } .contact-top { margin-left: 0; padding-right: 0; text-align: center; } }
     </style>
 </head>
 <body>
 
-<header class="header-main">
-    <img src="logo Toursumbria.png" alt="ToursUmbria" class="logo-central">
-    
-    <div class="contact-info">
-        <a href="https://wa.me/393883881471" class="wa-link">📞 WhatsApp: +39 388 388 1471</a>
-        <a href="mailto:info.toursumbria@gmail.com">✉️ info.toursumbria@gmail.com</a>
-        <div class="official-tag">Guía Oficial | Historiadora del Arte</div>
+<nav>
+    <div class="brand">
+        <img src="logo Toursumbria.png" alt="Logo ToursUmbria">
+        <span>ToursUmbria | Historiadora del Arte</span>
     </div>
+    <div class="contact-top">
+        <a href="https://wa.me/393883881471" class="wa-text">📞 +39 388 388 1471</a>
+        <a href="mailto:info.toursumbria@gmail.com">✉️ info.toursumbria@gmail.com</a>
+    </div>
+    <div class="lang-links">
+        <a href="#es">ES</a> <a href="#fr">FR</a> <a href="#it">IT</a>
+    </div>
+</nav>
 
+<header class="hero">
+    <img src="logo Toursumbria.png" alt="ToursUmbria Logo" class="logo-img">
+    <div class="badge">Guía Oficial | Historiadora del Arte</div>
     <h1>Explora el Alma de Umbría</h1>
-    <p class="intro-text">
-        "Descubriremos juntos la simbología y el contexto histórico de Perugia, Asís, Spello, Spoleto y Foligno."
-    </p>
-
+    <p class="intro-text">"Mi pasión como historiadora del arte es guiarte más allá de lo superficial. Descubriremos juntos la simbología y entenderemos el contexto de Perugia y Asís."</p>
+    
     <div class="hero-gallery">
-        <img src="fuente.jpg" alt="Perugia">
-        <img src="calle.jpg" alt="Asís">
-        <img src="anuncia.jpg" alt="Mosaico">
+        <img src="fuente.jpg" alt="Fontana Maggiore, Perugia">
+        <img src="calle.jpg" alt="Calle medieval">
+        <img src="anuncia.jpg" alt="Mosaico de la Anunciación">
     </div>
 </header>
 
 <section class="basilica-section">
     <div class="basilica-container">
-        <img src="basilica_principal.jpg" alt="Basílica de San Francisco de Asís">
+        <img src="basilica_principal.jpg" alt="Basílica de Asís">
     </div>
-    <p style="color:var(--terracota); font-weight:bold; margin-top:20px; font-family: 'Playfair Display', serif; font-size: 1.4rem;">
-        Visita Guiada: Basílica de San Francisco de Asís
-    </p>
+    <div class="basilica-text">
+        Análisis crítico de la Basílica de San Francisco de Asís y su patrimonio UNESCO
+    </div>
 </section>
 
-<main class="main-content">
+<section id="es" class="lang-section">
+    <h2>🇪🇸 Experiencias de Autor en Español</h2>
     
-    <div class="visit-label">Visita Guiada (Español)</div>
+    <div class="visit-guide-title">VISITA GUIADA</div>
+    
     <div class="grid">
         <div class="card">
-            <img src="campana_francisco.jpg" alt="Asís">
-            <h3>Asís Patrimonio UNESCO</h3>
-            <p>Un recorrido por la espiritualidad y los frescos que cambiaron la historia del arte.</p>
+            <img src="campana_francisco.jpg" alt="Basílica de Asís">
+            <h3>Asís Patrimonio</h3>
+            <p>Un recorrido por la espiritualidad y el arte de la ciudad de San Francisco.</p>
         </div>
         <div class="card">
-            <img src="callita.jpg" alt="Burgos medievales">
-            <h3>Spello, Spoleto y Foligno</h3>
-            <p>Descubre la arquitectura viva de los burgos medievales más bellos de Umbría.</p>
+            <img src="callita.jpg" alt="Callejón de Umbría">
+            <h3>Rincones Secretos</h3>
+            <p>Paseos por los burgos medievales más bellos: Spello, Spoleto y Foligno.</p>
         </div>
         <div class="card">
             <img src="meditacion.jpg" alt="Meditación">
-            <h3>Arte y Naturaleza</h3>
-            <p>La armonía perfecta en el corazón verde de Italia.</p>
+            <h3>Arte y Meditación</h3>
+            <p>La armonía entre el arte y la naturaleza en el corazón verde de Italia.</p>
         </div>
     </div>
+    <center><a href="https://wa.me/393883881471" class="btn-contact">Contactar por WhatsApp</a></center>
+</section>
 
-    <div class="visit-label">Visite Guidée (Français)</div>
+<section id="fr" class="lang-section" style="background: #fdf2ed;">
+    <h2>🇫🇷 Visites de l'Auteur en Français</h2>
+    
+    <div class="visit-guide-title">VISITE GUIDÉE</div>
+    
     <div class="grid">
         <div class="card">
             <img src="fuente2.jpg" alt="Pérouse">
             <h3>Pérouse Médiévale</h3>
-            <p>Décryptez l'histoire et la splendeur de la capitale ombrienne.</p>
+            <p>Décryptez l'histoire, les secrets étrusques et la splendeur de la capitale ombrienne.</p>
         </div>
         <div class="card">
-            <img src="meditacion.jpg" alt="Méditation">
-            <h3>Esprit et Paysage</h3>
-            <p>Une immersion unique dans l'art et la nature de la campagne ombrienne.</p>
+            <img src="meditacion.jpg" alt="Méditation en Ombrie">
+            <h3>Esprit y Paysage</h3>
+            <p>Une immersion unique dans l'art y la nature de la campagne ombrienne.</p>
         </div>
     </div>
+    <center><a href="https://wa.me/393883881471" class="btn-contact">Réserver par WhatsApp</a></center>
+</section>
 
-    <div class="visit-label">Visita Guidata (Italiano)</div>
+<section id="it" class="lang-section">
+    <h2>🇮🇹 Tour Specialistici in Italiano</h2>
+    
+    <div class="visit-guide-title">VISITA GUIDATA</div>
+    
     <div class="grid">
         <div class="card">
             <img src="campana_francisco.jpg" alt="Assisi">
-            <h3>Assisi e Giotto</h3>
-            <p>Un viaggio storico e artistico attraverso i capolavori dell'epoca.</p>
+            <h3>Assisi UNESCO</h3>
+            <p>Un viaggio storico e artistico nei luoghi francescani e del patrimonio UNESCO.</p>
         </div>
         <div class="card">
-            <img src="fuente.jpg" alt="Perugia">
-            <h3>I Segreti di Perugia</h3>
-            <p>Percorsi esclusivi alla scoperta dei monumenti iconici del centro storico.</p>
+            <img src="callita.jpg" alt="Umbria hidden gems">
+            <h3>Borghi Nascosti</h3>
+            <p>Alla scoperta di Spello, Spoleto, Foligno e i tesori architettonici nascosti.</p>
         </div>
     </div>
-
-</main>
+    <center><a href="https://wa.me/393883881471" class="btn-contact">Prenota ora</a></center>
+</section>
 
 <footer>
     <p><strong>ToursUmbria | Historiadora del Arte</strong></p>
-    <p>+39 388 388 1471 | info.toursumbria@gmail.com</p>
+    <p>Guía Turística Habilitada - +39 388 388 1471 - info.toursumbria@gmail.com</p>
     <div class="piva">PARTITA IVA: 07532960486</div>
-    <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 30px;">© 2026 ToursUmbria. Todos los derechos reservados.</p>
+    <p style="font-size: 0.75rem; opacity: 0.5; margin-top: 40px;">© 2026 ToursUmbria. Tutti i diritti riservati.</p>
 </footer>
 
 </body>
